@@ -1,0 +1,20 @@
+.padre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#dado{
+    background-color:#d7ede0;
+    width:250px;
+    height:250px;
+    margin:auto;
+    border-radius:15%;
+}
+
+#boton{
+    background-color: #d7ede0;
+    height: 50px;
+    width: 150px;
+}
