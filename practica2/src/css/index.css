@@ -1,0 +1,58 @@
+body{
+  margin: center;
+}
+.carton{
+  display: grid;
+  grid-template-columns : 1fr 1fr 1fr;
+  grid-template-rows: 1fr 4fr; 
+  background-color: #E6E6FA;
+  align-content: space-around;
+  border: 2px solid #228B22;
+}
+
+.titulo{
+  color: #228B22;
+  text-align: center;
+}
+.jugador {
+  margin: 70px;;
+ }
+
+.cpu {
+  margin: 70px;
+}
+
+.casilla{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  border: 2px solid #BC8F8F;
+  border-radius: 10%
+}
+
+.bingo{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#dado{
+    border: 2px solid #BC8F8F;
+    width:130px;
+    height:130px;
+    border-radius:35%;
+    font-size: 600%;
+    align-self: center;
+    margin: 5px;    
+}
+
+#boton {
+    background-color: white;
+    height: 20px;
+    width: 120px;
+    align-self: center;
+}
+
+#boton:hover {
+    background: pink;
