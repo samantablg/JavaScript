@@ -13,7 +13,6 @@ body{
   box-shadow: 0 0 10px indigo;
 }
 
-
 h1{
   color: black;
   font-family: 'Spirax', sans-serif;
@@ -21,22 +20,18 @@ h1{
   font-size: 50px;
   letter-spacing: -1px;
 }
-.jugador {
+.jugador, .cpu {
   margin: 70px;
-  /*display: grid; arreglar para que salga centradp*/
- }
-
-.cpu {
-  margin: 70px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  /*grid-gap: 2px 2px;*/ 
 }
 
 .casilla{
-  display: inline-block;
-  width: 80px;
-  height: 80px;
+  align-self: center;
+  justify-self: center;
   margin: auto;
-  border: 2px solid indigo;
-  border-radius: 10%;
   font-size: 25px; 
 }
 
@@ -65,3 +60,9 @@ h1{
 
 .boton:hover {
 background: pink;
+}
+
+.casilla.tachado {
+  text-decoration: line-through;
+  color: red;
+}

@@ -1,21 +1,28 @@
-var jugador = document.querySelector('.jugador');
-var cpu = document.querySelector('.cpu');
+const jugador = document.querySelector('.jugador');
+const cpu = document.querySelector('.cpu');
+const bolas = _.shuffle(_.range(1,91));
+const dado = document.getElementById("dado");
 
 var boton = document.querySelector('.boton');
 //var func = function (){}
-boton.onclick = function pulsarBoton() {
-  let rango = _.range(1,91);
-  let numeros = _.shuffle(rango);
-  let valor = numeros.splice(0,1);
+boton.onclick = function() {
 
-  if (numeros == []) {
-    alert('Han salido todos los números -- Fallo algo en el juego');
-  }
+  let valor = bolas.pop();
 
-  var dado = document.getElementById("dado");
+  jugar(valor, cartonjugador);
+  jugar(valor, cartoncpu);  
+ 
   dado.textContent = valor; 
 
-  return valor;
+  //comprobación del juego
+
+  if (array_cartonjugador.length == array_cartoncpu.length && array_cartonjugador.length == 0) {
+    alert ('Empate');
+  } else if (array_cartonjugador.length == 0) {
+    alert ('Has ganado');
+  } else if (array_cartoncpu.length == 0) {
+    alert ('Has perdido');
+  }
 }
 
 function crearCarton(){
@@ -29,29 +36,27 @@ function crearCarton(){
 function mostrarCarton(carton, usuario){
   for (var i = 0; i < carton.length; i++){
     var div = document.createElement('div');
-    div.className = `casilla numero${i}`;
-    div.textContent = carton[i];
+    var numero = carton[i];
+
+    div.className = `casilla numero${numero}`;
+    div.textContent = numero;
     usuario.appendChild(div);
   }
 }
 
 function jugar(valor, carton){
-  for (var i = 0; i < carton.length; i++){
-    if (valor == carton[i]){
-      var elem = document.querySelector(`.numero${i}`);
-      elem.style.backgroundColor = red;
-    }
-  } 
-}
-
-function comprobar(carton){
+  var elementos = document.querySelectorAll(`.numero${valor}`);
+  for (var i = 0; i < elementos.length; i++) {
+    elementos[i].classList.add('tachado');
+  }
+  _.pull(carton, valor);
 }
 
 var cartonjugador = crearCarton();
 mostrarCarton(cartonjugador,jugador);
 var cartoncpu = crearCarton();
 mostrarCarton(cartoncpu, cpu);
-jugar(valor, cartonjugador);
+
 
 //boton.addEventListener('click',func);
 //boton.removeEventListener('click',func);
