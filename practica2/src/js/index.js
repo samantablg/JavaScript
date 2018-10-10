@@ -1,7 +1,8 @@
 var jugador = document.querySelector('.jugador');
 var cpu = document.querySelector('.cpu');
 
-var boton = document.getElementById("boton");
+var boton = document.querySelector('.boton');
+//var func = function (){}
 boton.onclick = function pulsarBoton() {
   let rango = _.range(1,91);
   let numeros = _.shuffle(rango);
@@ -25,7 +26,7 @@ function crearCarton(){
   return carton;
 }
 
-function mostrarCarton(carton,usuario){
+function mostrarCarton(carton, usuario){
   for (var i = 0; i < carton.length; i++){
     var div = document.createElement('div');
     div.className = `casilla numero${i}`;
@@ -49,5 +50,8 @@ function comprobar(carton){
 var cartonjugador = crearCarton();
 mostrarCarton(cartonjugador,jugador);
 var cartoncpu = crearCarton();
-mostrarCarton(cartoncpu,cpu);
+mostrarCarton(cartoncpu, cpu);
 jugar(valor, cartonjugador);
+
+//boton.addEventListener('click',func);
+//boton.removeEventListener('click',func);

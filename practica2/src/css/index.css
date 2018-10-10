@@ -22,7 +22,8 @@ h1{
   letter-spacing: -1px;
 }
 .jugador {
-  margin: 70px;;
+  margin: 70px;
+  /*display: grid; arreglar para que salga centradp*/
  }
 
 .cpu {
@@ -34,8 +35,9 @@ h1{
   width: 80px;
   height: 80px;
   margin: auto;
-  border: 2px solid #BC8F8F;
-  border-radius: 10%
+  border: 2px solid indigo;
+  border-radius: 10%;
+  font-size: 25px; 
 }
 
 .bingo{
@@ -45,7 +47,7 @@ h1{
 }
 
 #dado{
-    border: 2px solid #BC8F8F;
+    border: 2px solid indigo;
     width:130px;
     height:130px;
     border-radius:35%;
@@ -54,12 +56,12 @@ h1{
     margin: 5px;    
 }
 
-#boton {
+.boton {
     background-color: white;
     height: 20px;
     width: 120px;
     align-self: center;
 }
 
-#boton:hover {
+.boton:hover {
 background: pink;
