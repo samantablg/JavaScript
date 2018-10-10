@@ -1,20 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Spirax');
+
 body{
   margin: center;
 }
 .carton{
   display: grid;
   grid-template-columns : 1fr 1fr 1fr;
-  grid-template-rows: 1fr 4fr; 
+  grid-template-rows: 1fr 3fr; 
   background-color: #E6E6FA;
   align-content: space-around;
-  border: 2px solid #228B22;
-  box-shadow: #228B22;
-  box-shadow: 0 0 10px #228B22;
+  border: 2px double indigo;
+  box-shadow: 0 0 10px indigo;
 }
 
-.titulo{
-  color: #228B22;
+
+h1{
+  color: black;
+  font-family: 'Spirax', sans-serif;
   text-align: center;
+  font-size: 50px;
+  letter-spacing: -1px;
 }
 .jugador {
   margin: 70px;;
