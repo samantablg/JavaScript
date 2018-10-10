@@ -1,28 +1,53 @@
+var jugador = document.querySelector('.jugador');
+var cpu = document.querySelector('.cpu');
+
 var boton = document.getElementById("boton");
 boton.onclick = function pulsarBoton() {
-  var valor = _.random(1, 90);//devuelve un número entero entre 1 y 30
+  let rango = _.range(1,91);
+  let numeros = _.shuffle(rango);
+  let valor = numeros.splice(0,1);
+
+  if (numeros == []) {
+    alert('Han salido todos los números -- Fallo algo en el juego');
+  }
+
   var dado = document.getElementById("dado");
   dado.textContent = valor; 
+
+  return valor;
 }
 
-function crearCarton(rango){
-  var rango = _.range(1,91);
-  var numeros = _.shuffle(rango);
-  var carton = Array(25);
+function crearCarton(){
+  let rango = _.range(1,91);
+  let numeros = _.shuffle(rango);
+  var carton = numeros.splice(0,15);
+  
+  return carton;
+}
+
+function mostrarCarton(carton,usuario){
   for (var i = 0; i < carton.length; i++){
-    var cas = numeros.splice(0,1);
+    var div = document.createElement('div');
+    div.className = `casilla numero${i}`;
+    div.textContent = carton[i];
+    usuario.appendChild(div);
   }
-  if (!carton.includes(cas)){
-    carton.push(cas);
-  }
-  /*
-  var casilla = document.getElementById('casilla');
-  elemento.innerHTML = 'carton[i]';
-  */
 }
 
-crearCarton(rango);
+function jugar(valor, carton){
+  for (var i = 0; i < carton.length; i++){
+    if (valor == carton[i]){
+      var elem = document.querySelector(`.numero${i}`);
+    }
+  } 
 
-function jugar(){
- 
+  return ;
 }
+
+function comprobar(carton){
+}
+
+var cartonjugador = crearCarton();
+mostrarCarton(cartonjugador,jugador);
+var cartoncpu = crearCarton();
+mostrarCarton(cartoncpu,cpu);
