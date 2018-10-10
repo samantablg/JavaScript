@@ -38,10 +38,9 @@ function jugar(valor, carton){
   for (var i = 0; i < carton.length; i++){
     if (valor == carton[i]){
       var elem = document.querySelector(`.numero${i}`);
+      elem.style.backgroundColor = red;
     }
   } 
-
-  return ;
 }
 
 function comprobar(carton){
@@ -51,3 +50,4 @@ var cartonjugador = crearCarton();
 mostrarCarton(cartonjugador,jugador);
 var cartoncpu = crearCarton();
 mostrarCarton(cartoncpu,cpu);
+jugar(valor, cartonjugador);
