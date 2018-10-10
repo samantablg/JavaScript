@@ -1,6 +1,5 @@
-var rango = _.range(1,91);
-
 function crearCarton(rango){
+  var rango = _.range(1,91);
   var numeros = _.shuffle(rango);
   var carton = [];
   for (var i = 0; i < 15; i++){
