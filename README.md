@@ -1,3 +1,5 @@
-**JS**
+JavaScript
 
-Repositorios de trabajos realizados con JavaScript en el curso FULLSTACK de EOI
+Repositorio de ejercicios realizados con JavaScript en el curso FULLSTACK de EOI.
+
+Samanta Belén Lara
