@@ -11,18 +11,10 @@ boton.onclick = function() {
   jugar(valor, cartonjugador);
   jugar(valor, cartoncpu);  
  
-  dado.textContent = valor; 
+  dado.textContent = valor;
   
-  if (cartonjugador.length == cartoncpu.length && cartonjugador.length == 0) {
-    alert ('Empate');
-    document.querySelector('.boton').remove();
-  } else if (cartonjugador.length == 0) {
-    alert ('¡Has ganado!');
-    document.querySelector('.boton').remove();
-  } else if (cartoncpu.length == 0) {
-    alert ('¡Has perdido!');
-    document.querySelector('.boton').remove();
-  }
+  //comprobarlinea(cartonJugador);
+  comprobarBingo(cartonjugador, cartoncpu);
 }
 
 
@@ -53,6 +45,27 @@ function jugar(valor, carton){
   _.pull(carton, valor);
 
   return carton;
+}
+
+/*function comprobarLinea (cartonjugador) { //terminar
+  for (let i = 0; i < 4; i++) {
+    if (carton[i].classList.contains('tachado') == true) {
+      alert (Haz hecho línea);
+    } 
+  }
+}*/
+
+function comprobarBingo(cartonjugador, cartoncpu) {
+  if (cartonjugador.length == cartoncpu.length && cartonjugador.length == 0) {
+    alert ('Empate');
+    document.querySelector('.boton').remove();
+  } else if (cartonjugador.length == 0) {
+    alert ('¡Has ganado!');
+    document.querySelector('.boton').remove();
+  } else if (cartoncpu.length == 0) {
+    alert ('¡Has perdido!');
+    document.querySelector('.boton').remove();
+  }
 }
 
 var cartonjugador = crearCarton();
