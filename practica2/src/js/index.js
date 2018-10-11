@@ -13,14 +13,18 @@ boton.onclick = function() {
  
   dado.textContent = valor; 
   
-  if (array_cartonjugador.length == array_cartoncpu.length && array_cartonjugador.length == 0) {
+  if (cartonjugador.length == cartoncpu.length && cartonjugador.length == 0) {
     alert ('Empate');
-  } else if (array_cartonjugador.length == 0) {
-    alert ('Has ganado');
-  } else if (array_cartoncpu.length == 0) {
-    alert ('Has perdido');
+    document.querySelector('.boton').remove();
+  } else if (cartonjugador.length == 0) {
+    alert ('¡Has ganado!');
+    document.querySelector('.boton').remove();
+  } else if (cartoncpu.length == 0) {
+    alert ('¡Has perdido!');
+    document.querySelector('.boton').remove();
   }
 }
+
 
 function crearCarton(){
   let rango = _.range(1,91);
