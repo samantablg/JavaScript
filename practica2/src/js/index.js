@@ -4,18 +4,15 @@ const bolas = _.shuffle(_.range(1,91));
 const dado = document.getElementById("dado");
 
 var boton = document.querySelector('.boton');
-//var func = function (){}
+
 boton.onclick = function() {
-
-  let valor = bolas.pop();
-
+  let valor = bolas.pop(); //sacar la ultima
+  
   jugar(valor, cartonjugador);
   jugar(valor, cartoncpu);  
  
   dado.textContent = valor; 
-
-  //comprobación del juego
-
+  
   if (array_cartonjugador.length == array_cartoncpu.length && array_cartonjugador.length == 0) {
     alert ('Empate');
   } else if (array_cartonjugador.length == 0) {
@@ -50,13 +47,14 @@ function jugar(valor, carton){
     elementos[i].classList.add('tachado');
   }
   _.pull(carton, valor);
+
+  return carton;
 }
 
 var cartonjugador = crearCarton();
 mostrarCarton(cartonjugador,jugador);
 var cartoncpu = crearCarton();
 mostrarCarton(cartoncpu, cpu);
-
 
 //boton.addEventListener('click',func);
 //boton.removeEventListener('click',func);

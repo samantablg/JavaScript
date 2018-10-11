@@ -25,7 +25,7 @@ h1{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
-  /*grid-gap: 2px 2px;*/ 
+  grid-gap: 2px 2px; 
 }
 
 .casilla{
@@ -36,9 +36,10 @@ h1{
 }
 
 .bingo{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  display: grid;
+  grid-column: auto;
+  align-content: center;
+  margin: auto;
 }
 
 #dado{
@@ -47,14 +48,15 @@ h1{
     height:130px;
     border-radius:35%;
     font-size: 600%;
-    align-self: center;
+    align-content: center;
+    justify-content: center;
     margin: 5px;    
 }
 
 .boton {
     background-color: white;
     height: 20px;
-    width: 120px;
+    width: 130px;
     align-self: center;
 }
 
